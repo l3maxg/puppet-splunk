@@ -1,7 +1,8 @@
 $splunk_ver = '6.0.3-204106-linux-2.6-amd64'
+$bin_path = '/opt/splunkforwarder/bin'
 
 package { 'splunk':
-  source   => "/vagrant/files/splunk-${splunk_ver}.deb",
+  content   => template("/vagrant/sw/splunk-${splunk_ver}.deb"),
   provider => dpkg,
   notify => Service['splunk'],
 } ->
