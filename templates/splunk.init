@@ -10,4 +10,4 @@ stop on runlevel [06]
 respawn
 respawn limit 1 100
 
-exec <%= bin_path  %>/splunk start --accept-license
+exec <%= splunk_root  %>/bin/splunk start --accept-license
